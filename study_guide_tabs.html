@@ -1,0 +1,243 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Guia de Estudos – Redes &amp; Software</title>
+  <!--
+    Este guia de estudos foi criado a partir das anotações e slides fornecidos.  
+    Ele organiza os tópicos em duas grandes áreas (Redes de Computadores/SI na Nuvem e Processos de Desenvolvimento/Ágil) acessíveis via abas.  
+    O estilo escuro e as cores vibrantes se inspiram no exemplo enviado pelo usuário.  
+    O código é totalmente auto‑contido e pode ser salvo e aberto offline em qualquer navegador.
+  -->
+  <script type="text/javascript" src="https://gc.kis.v2.scr.kaspersky-labs.com/FD126C42-EBFA-4E12-B309-BB3FDD723AC1/main.js?attr=yr3G_yCDPKg7giZtE31OvKGlj6XZFYG8cR02c2Qdf35U5qgn-Mp1tfyBth30uZ_T2Y_0oI5MiwIgjfARLhPvtP-axehC5XmuVV7wI6cfvmWnfKXgBbDseyTRXE18sOAoaALZWYq9jxMlTOkIBnzPng8HFT7wUq7RlqDNpMvbZCM9J6i_Mfe9MrP25Ajg_488Tzk-qHvTilda_ADlqRG5ZTwCr3vi693_0-9EGFDQEwi2z9MJUK7kjWrTN7E315Rm" charset="UTF-8"></script><style>
+    :root {
+      /* Cores principais */
+      --bg: #0a0e23;
+      --surface: #16213e;
+      --surface2: #1d2a50;
+      --accent1: #00bcd4; /* Azul para Redes */
+      --accent2: #e91e63; /* Rosa para Software */
+      --text: #e5ecff;
+      --muted: #8892b0;
+      --border: rgba(255,255,255,0.1);
+    }
+    * { margin: 0; padding: 0; box-sizing: border-box; }
+    body {
+      font-family: Arial, Helvetica, sans-serif;
+      background: var(--bg);
+      color: var(--text);
+      min-height: 100vh;
+    }
+    header {
+      text-align: center;
+      padding: 40px 20px 20px;
+    }
+    header h1 {
+      font-size: 2.4rem;
+      font-weight: 700;
+      line-height: 1.2;
+    }
+    header span {
+      display: block;
+      font-size: 1rem;
+      color: var(--muted);
+      margin-top: 4px;
+    }
+    /* Navegação de abas */
+    .tabs {
+      display: flex;
+      justify-content: center;
+      gap: 12px;
+      margin: 0 20px 30px;
+      flex-wrap: wrap;
+    }
+    .tab-btn {
+      padding: 12px 24px;
+      border-radius: 20px;
+      border: 1px solid var(--border);
+      background: var(--surface);
+      color: var(--muted);
+      font-weight: 600;
+      cursor: pointer;
+      transition: all .2s;
+    }
+    .tab-btn.active {
+      color: var(--bg);
+    }
+    .tab-btn.redes.active {
+      background: var(--accent1);
+      border-color: var(--accent1);
+    }
+    .tab-btn.software.active {
+      background: var(--accent2);
+      border-color: var(--accent2);
+    }
+    /* Conteúdo de abas */
+    .tab-content {
+      display: none;
+      padding: 0 20px 40px;
+    }
+    .tab-content.active {
+      display: block;
+      animation: fadeIn .3s ease;
+    }
+    @keyframes fadeIn {
+      from { opacity: 0; transform: translateY(10px); }
+      to { opacity: 1; transform: translateY(0); }
+    }
+    /* Seções internas */
+    .section {
+      background: var(--surface);
+      border: 1px solid var(--border);
+      border-radius: 16px;
+      padding: 24px;
+      margin-bottom: 24px;
+    }
+    .section h2 {
+      font-size: 1.4rem;
+      margin-bottom: 12px;
+      display: flex;
+      align-items: center;
+    }
+    .section h2 .icon {
+      margin-right: 8px;
+    }
+    .section p, .section ul {
+      font-size: 1rem;
+      line-height: 1.6;
+      color: #c4d2ef;
+    }
+    .section ul {
+      padding-left: 20px;
+      margin-top: 8px;
+    }
+    .section ul li {
+      margin-bottom: 6px;
+    }
+    /* Cores específicas para headings */
+    .redes .section h2 {
+      color: var(--accent1);
+    }
+    .software .section h2 {
+      color: var(--accent2);
+    }
+    /* Modo responsivo */
+    @media (min-width: 700px) {
+      .section h2 { font-size: 1.6rem; }
+      .section p, .section ul { font-size: 1.05rem; }
+    }
+  </style>
+</head>
+<body>
+  <header>
+    <h1>Guia de Estudos</h1>
+    <span>Processos de Desenvolvimento &amp; Redes de Computadores</span>
+  </header>
+  <!-- Navegação de abas -->
+  <nav class="tabs">
+    <button class="tab-btn redes active" onclick="showTab('redes')">Redes &amp; Segurança</button>
+    <button class="tab-btn software" onclick="showTab('software')">Processos &amp; Ágil</button>
+  </nav>
+  <!-- Conteúdo da aba Redes & Segurança -->
+  <div id="redes" class="tab-content active redes">
+    <div class="section">
+      <h2><span class="icon">🔌</span>Topologias de Redes</h2>
+      <p>Uma topologia de rede descreve como computadores e dispositivos são conectados e como os dados trafegam entre eles. Ela pode ser física (representa cabos e conexões reais) ou lógica (representa o fluxo de dados, independentemente da fiação). Estudar topologias ajuda a avaliar eficiência, detecção de falhas e otimização de recursos.</p>
+      <ul>
+        <li><strong>Física vs. Lógica:</strong> a topologia física representa a disposição real do hardware, enquanto a topologia lógica descreve como os dados se movem.</li>
+        <li><strong>Tipos Comuns:</strong> barramento, anel, estrela, malha, árvore e híbrida.</li>
+      </ul>
+    </div>
+    <div class="section">
+      <h2><span class="icon">🚌</span>Topologia em Barramento</h2>
+      <p>Nessa topologia todos os dispositivos compartilham um único cabo (o barramento). Os dados trafegam por broadcast e cada dispositivo monitora o barramento até encontrar mensagens direcionadas a si.</p>
+      <ul>
+        <li><strong>Funcionamento:</strong> um cabo coaxial com conectores em “T” interliga os dispositivos. Terminadores em cada ponta absorvem sinais. Para evitar colisões, usa‑se o protocolo CSMA/CD.</li>
+        <li><strong>Vantagens:</strong> baixo custo, simplicidade e facilidade de expansão em pequenos ambientes.</li>
+        <li><strong>Desvantagens:</strong> suscetível a colisões, difícil isolamento de falhas (um problema derruba toda a rede) e baixa escalabilidade.</li>
+      </ul>
+    </div>
+    <div class="section">
+      <h2><span class="icon">🔄</span>Topologia em Anel</h2>
+      <p>Os dispositivos formam um laço fechado, cada um conectado ao vizinho seguinte. Os dados viajam em um único sentido e passam por cada nó até chegar ao destino.</p>
+      <ul>
+        <li><strong>Token Ring:</strong> um “token” (pequeno pacote) circula no anel; apenas quem possui o token pode transmitir, eliminando colisões.</li>
+        <li><strong>Vantagens:</strong> ausência de colisões, regeneração de sinal a cada salto e previsibilidade de desempenho.</li>
+        <li><strong>Desvantagens:</strong> a falha de um único nó ou cabo interrompe o anel; adicionar ou remover dispositivos requer desligar a rede.</li>
+      </ul>
+    </div>
+    <div class="section">
+      <h2><span class="icon">🔗</span>Meios de Transmissão</h2>
+      <p>São canais físicos ou lógicos que transportam sinais de rede. A escolha do meio influencia velocidade, qualidade e custo.</p>
+      <ul>
+        <li><strong>Cobre:</strong> cabos de par trançado e coaxial são econômicos e fáceis de instalar, mas sofrem com interferências e têm alcance limitado.</li>
+        <li><strong>Fibra Óptica:</strong> usa filamentos de vidro para transmitir luz; oferece alta largura de banda, alcance longo e imunidade a interferências, porém tem custo maior e instalação mais delicada.</li>
+        <li><strong>Ondas Eletromagnéticas:</strong> Wi‑Fi, Bluetooth, 4G/5G e satélite permitem mobilidade, mas estão sujeitos a interferências e requerem segurança reforçada.</li>
+      </ul>
+    </div>
+    <div class="section">
+      <h2><span class="icon">☁️</span>Segurança na Nuvem</h2>
+      <p>Refere‑se a políticas, tecnologias e práticas que protegem dados, aplicações e infraestrutura em ambientes de computação em nuvem. É crucial porque as empresas dependem cada vez mais de serviços na nuvem.</p>
+      <ul>
+        <li><strong>Desafios:</strong> falta de visibilidade sobre a infraestrutura do provedor, ambientes multi‑inquilino, gestão de acesso inadequada, compliance e erros de configuração.</li>
+        <li><strong>Boas Práticas:</strong> implementar controle de identidade e acesso (IAM), criptografar dados em repouso e em trânsito, monitorar continuamente, aplicar configurações seguras e realizar backup regular.</li>
+      </ul>
+    </div>
+  </div>
+  <!-- Conteúdo da aba Processos & Ágil -->
+  <div id="software" class="tab-content software">
+    <div class="section">
+      <h2><span class="icon">📝</span>Requisitos de Software</h2>
+      <p>Requisitos são declarações que descrevem o que um sistema deve fazer (funcionais) e como ele deve ser (não funcionais). Eles guiam o desenvolvimento e ajudam a verificar se o produto atende às expectativas. Bons requisitos devem ser <strong>S.M.A.R.T.</strong> – específicos, mensuráveis, alcançáveis, relevantes e temporais.</p>
+      <ul>
+        <li><strong>Funcionais:</strong> descrevem funções ou serviços, por exemplo “o sistema deve permitir login” ou “enviar notificação por e‑mail”.</li>
+        <li><strong>Não Funcionais:</strong> definem restrições de desempenho, segurança, usabilidade e compatibilidade.</li>
+        <li><strong>Exemplo de WhatsApp:</strong> mensagens de texto, chamadas e grupos são requisitos funcionais; criptografia, suporte a conexões lentas e backups automáticos são requisitos não funcionais.</li>
+        <li><strong>Documentação:</strong> um requisito geralmente contém um identificador, tipo, prioridade, descrição clara, critérios de aceitação e rastreabilidade.</li>
+      </ul>
+    </div>
+    <div class="section">
+      <h2><span class="icon">🔍</span>Elicitação de Requisitos</h2>
+      <p>Elicitar é descobrir necessidades através de conversa, observação e análise, diferenciando‑se de simplesmente “perguntar”. Envolve entender o contexto, problemas e objetivos do usuário.</p>
+      <ul>
+        <li><strong>Atores:</strong> usuário final, analista, gerente e desenvolvedor, cada um com conhecimentos e interesses distintos.</li>
+        <li><strong>Dificuldades:</strong> barreiras de comunicação, vocabulário técnico, viés de confirmação e fixação funcional.</li>
+        <li><strong>Técnicas:</strong> entrevistas, observação (AEIOU: Activities, Environment, Interactions, Objects, Users), brainstorming, prototipagem e análises documentais.</li>
+        <li><strong>Elicitação Ágil:</strong> prioriza descobrir o “suficiente” para começar, aceitando mudanças durante o projeto e realizando conversas frequentes.</li>
+      </ul>
+    </div>
+    <div class="section">
+      <h2><span class="icon">⚡</span>Manifesto Ágil</h2>
+      <p>O Manifesto Ágil valoriza indivíduos e interações, software em funcionamento, colaboração com o cliente e resposta a mudanças. Esses valores não descartam processos ou documentação, mas enfatizam entregar valor rapidamente e se adaptar.</p>
+      <ul>
+        <li><strong>Princípios:</strong> foco em entregas frequentes, integração contínua com feedback do usuário e flexibilidade para alterar requisitos durante o desenvolvimento.</li>
+        <li><strong>Diferenças para Cascata:</strong> em vez de longos períodos de planejamento e documentação, o ágil promove ciclos curtos (sprints) com protótipos e revisões constantes.</li>
+      </ul>
+    </div>
+    <div class="section">
+      <h2><span class="icon">🧪</span>Testes de Software</h2>
+      <p>Testar significa verificar se um programa atende aos requisitos e identificar defeitos o mais cedo possível. O custo de corrigir um erro aumenta drasticamente se ele for encontrado tardiamente no ciclo de vida.</p>
+      <ul>
+        <li><strong>Por que testar:</strong> aumenta a confiança no sistema, melhora a manutenção, serve como documentação executável e garante qualidade.</li>
+        <li><strong>Tipos de Problemas:</strong> funcionais (função incorreta), interface (problemas de interação), desempenho, segurança e compatibilidade.</li>
+        <li><strong>Papel do Testador:</strong> detectar erros, sugerir melhorias e colaborar com a equipe para prevenir falhas. No modelo <em>shift‑left</em> os testes começam desde o início do projeto.</li>
+      </ul>
+    </div>
+  </div>
+  <script>
+    function showTab(tabName) {
+      // Atualiza abas
+      document.querySelectorAll('.tab-btn').forEach(btn => {
+        btn.classList.remove('active');
+      });
+      document.querySelectorAll('.tab-content').forEach(tab => {
+        tab.classList.remove('active');
+      });
+      // Ativa a aba selecionada
+      document.querySelector('.tab-btn.' + tabName).classList.add('active');
+      document.getElementById(tabName).classList.add('active');
+    }
+  </script>
+</body>
+</html>
